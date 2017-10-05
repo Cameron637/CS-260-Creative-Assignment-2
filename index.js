@@ -29,6 +29,7 @@ $(document).ready(function () {
         $.getJSON(sunriseURL, function (json) {
           $('#sunrise h3 span').text(json.results.sunrise);
           $('#sunset h3 span').text(json.results.sunset);
+          $('#suncycle').css('display', 'block');
         });
       });
   });
