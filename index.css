@@ -1,0 +1,19 @@
+.launch_pad {
+  background-color: rgba(64, 90, 147, 0.7);
+}
+label {
+  color: white;
+  text-align: center;
+}
+div {
+  text-align: center;
+}
+h1 {
+  color: white;
+}
+
+body {
+  background-image: url("http://scienceblogs.com/startswithabang/files/2012/04/18744-winter-solstice-sunrise-to-sunset-950x435.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
