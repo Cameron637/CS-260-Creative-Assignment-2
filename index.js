@@ -3,6 +3,8 @@ $("#submit").click(function(e){
   console.log("#zip");
   console.log("#city");
   var value = $("#zip").val();
+  var latitude;
+  var longitude
   console.log(value);
   e.preventDefault();
 $("#displayCity").text(value);
@@ -10,18 +12,20 @@ $("#displayCity").text(value);
   myurl += value;
   //myurl += ".json";
   console.log(myurl);
-  $.ajax({
-    url : myurl,
-    dataType : "json",
-    success : function(parsed_json) {
-      var latitude = parsed_json['places']['0']['latitude'];
-      var longitude = parsed_json['places']['0']['longitude'];
+  $.getJSON(myurl, function(parsed_json) {
+      latitude = parsed_json['places']['0']['latitude'];
+      longitude = parsed_json['places']['0']['longitude'];
       everything = "<ul>";
       everything += "<li>Latitude: "+latitude;
       everything += "<li>Longitude: "+longitude;
       everything += "</ul>";
       $("#coordinate").html(everything);
-    }
+  })
+  .done(function() {
+    var sunriseURL = 'https://api.sunrise-sunset.org/json?lat=' + latitude + '&lng=' + longitude + '&date=today';
+    $.getJSON(sunriseURL, function(parsed_json) {
+      console.log(parsed_json);
+    });
   });
 
 });
