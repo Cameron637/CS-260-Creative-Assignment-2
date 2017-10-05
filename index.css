@@ -4,18 +4,22 @@
 label {
   color: white;
   text-align: center;
+  text-shadow: black 0.3em 0.3em 0.3em;
 }
 div {
   text-align: center;
 }
 h1 {
   color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
 }
 h2 {
   color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
 }
 h3 {
   color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
 }
 body {
   background-image: url("http://scienceblogs.com/startswithabang/files/2012/04/18744-winter-solstice-sunrise-to-sunset-950x435.jpg");
