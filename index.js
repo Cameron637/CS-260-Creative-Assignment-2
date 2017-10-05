@@ -24,11 +24,13 @@ $(document).ready(function () {
       $('#suncycle h2 span').text(city);
     })
       .done(function () {
-        let sunriseURL = 'https://api.sunrise-sunset.org/json?lat=' + latitude + '&lng=' + longitude + '&date=today';
+        let sunriseURL = 'https://api.sunrise-sunset.org/json?lat=' + latitude + '&lng=' + longitude + '&date=today&formatted=0';
 
         $.getJSON(sunriseURL, function (json) {
-          $('#sunrise h3 span').text(json.results.sunrise);
-          $('#sunset h3 span').text(json.results.sunset);
+          let sunrise = moment(json.results.sunrise).format('h:mm A');
+          let sunset = moment(json.results.sunset).format('h:mm A');
+          $('#sunrise h3 span').text(sunrise);
+          $('#sunset h3 span').text(sunset);
           $('#suncycle').css('display', 'block');
         });
       });
